@@ -2,9 +2,9 @@
 
 // Global Variables
 const links = document.querySelector(".links");
-const ancors = document.querySelectorAll(".links ul li a");
+const anchors = document.querySelectorAll(".links ul li a");
 const sections = document.querySelectorAll("section");
-const botton = document.querySelector(".up");
+const button = document.querySelector(".up");
 //End global Variables
 
 //Start Navigator bar Function
@@ -17,7 +17,7 @@ const navBar = (event) => {
   }, 5000);
   // Scroll To Sections
   event.preventDefault();
-  ancors.forEach((a) => {
+  anchors.forEach((a) => {
     a.addEventListener("click", (eve) => {
       document
         .querySelector(`${eve.target.hash}`)
@@ -31,16 +31,16 @@ const navBar = (event) => {
 links.addEventListener("click", navBar);
 //End Events To Navigator bar
 
-// Show and Hide Botton
+// Show and Hide button
 window.onscroll = () => {
   scrollY >= 700
-    ? botton.classList.add("show")
-    : botton.classList.remove("show");
+    ? button.classList.add("show")
+    : button.classList.remove("show");
 };
 
-//Scrolling UP botton to Top
+//Scrolling UP button to Top
 
-botton.addEventListener("click", () => {
+button.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
